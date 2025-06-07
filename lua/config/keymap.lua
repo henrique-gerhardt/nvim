@@ -38,30 +38,30 @@ function M.setup()
 		icon = { icon = "󰆏", color = "blue" },
 	})
 
-	map({ "n", "v" }, "<leader>F", function()
-		require("conform").format({
-			lsp_fallback = true,
-			async = false,
-			timeout_ms = 500,
-		})
-	end, {
-		desc = "Format file or range",
-		icon = { icon = "󰝕", color = "orange" },
-	})
+        map({ "n", "v" }, "<leader>F", function()
+                require("conform").format({
+                        lsp_fallback = true,
+                        async = false,
+                        timeout_ms = 500,
+                })
+        end, {
+                desc = "Format file or range",
+                icon = { icon = "󰝕", color = "orange" },
+        })
 
-	local flash = require("flash")
-	map({ "n", "v" }, "<leader>f", function()
-		flash.jump()
-	end, {
-		desc = "Flash",
-		icon = { icon = "󱐋", color = "yellow" },
-	})
+        map({ "n", "v" }, "<leader>f", function()
+                require("flash").jump()
+        end, {
+                desc = "Flash",
+                icon = { icon = "󱐋", color = "yellow" },
+        })
 
-	local telescope = require("telescope.builtin")
-	map("n", "<leader>p", telescope.find_files, {
-		desc = "Find files",
-		icon = { icon = "", hl = "Search", color = "blue" },
-	})
+        map("n", "<leader>p", function()
+                require("telescope.builtin").find_files()
+        end, {
+                desc = "Find files",
+                icon = { icon = "", hl = "Search", color = "blue" },
+        })
 end
 
 function M.get_cmp_mappings()
