@@ -22,11 +22,11 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 	},
 	config = function()
-		local servers = {
-			"lua_ls",
-			"ts_ls",
-			-- "jdtls",
-		}
+                local servers = {
+                        "lua_ls",
+                        "tsserver",
+                        -- "jdtls",
+                }
 
 		require("mason").setup()
 

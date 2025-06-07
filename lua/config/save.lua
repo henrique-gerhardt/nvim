@@ -33,15 +33,15 @@ function M.setup()
 		end
 	end
 
-	vim.api.nvim_create_autocmd("BufWritePre", {
-		callback = function()
-			require("conform").format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 500,
-			})
-			organize_imports()
-		end,
-	})
+        vim.api.nvim_create_autocmd("BufWritePre", {
+                callback = function()
+                        require("conform").format({
+                                lsp_fallback = true,
+                                async = false,
+                                timeout_ms = 500,
+                        })
+                        organize_imports()
+                end,
+        })
 end
 return M
